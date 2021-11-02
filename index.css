@@ -1,0 +1,36 @@
+
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#registerButton
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    height: 25px;
+}
+
+#textfieldDiv
+{
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    width: 25%;
+}
+
+.textF
+{
+    margin: 2px;
+    height: 21px;
+}
+
+.bonusClass
+{
+    margin: 4px;
+}
+
+#bonusDiv
+{
+
+}
