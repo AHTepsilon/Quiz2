@@ -1,0 +1,29 @@
+{
+  "name": "quiz",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000Q\u0000u\u0000i\u0000z\u00002\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "dependencies": {
+    "firebase": "^9.2.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.61.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack --watch --progress",
+    "visualize-bundle": "webpack --analyze"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AHTepsilon/Quiz2.git"
+  },
+  "author": "Alejandro Hernández Toro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AHTepsilon/Quiz2/issues"
+  },
+  "homepage": "https://github.com/AHTepsilon/Quiz2#readme"
+}
