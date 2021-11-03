@@ -30,27 +30,27 @@ function getUsers()
     });
 }
 
-const userList1 = document.getElementById("bonusC1");
+getUsers();
 
 function updateUsers(info)
 {
     if(info)
     {
         let text = "";
+        
         Object.keys(info).forEach((key, index) =>
         {
             console.log(key, index);
-            text += info[key].NAME + "\n";
+            text += info[key].NAME + "<br>";
         });
-
         console.log(text)
 
-        //userList1.innerHTML(text);
+        userList1.innerHTML = text;
     }
 
     else
     {
-        //userList1.innerHTML("N/A");
+        userList1.innerHTML = "n/a";
     }
 }
 
@@ -59,6 +59,9 @@ const codeText = document.getElementById("codeTextField");
 const courseText = document.getElementById("course");
 
 const registerButton = document.getElementById("registerButton");
+
+const userList1 = document.getElementById("bonusC1");
+
 
 function test()
 {
@@ -84,4 +87,3 @@ const saveUserData = (e, event) =>
 }
 
 registerButton.addEventListener("click", saveUserData);
-registerButton.addEventListener("click", getUsers);
