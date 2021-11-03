@@ -2,6 +2,7 @@ import {initializeApp} from "firebase/app";
 import {getDatabase, ref, set, onValue, push} from "firebase/database";
 
 import {getFirebaseConfig} from "./firebase-config";
+import {userCards} from "./userCards";
 
 const firebaseAppConfig = getFirebaseConfig();
 const firebaseApp = initializeApp(firebaseAppConfig); 
@@ -12,6 +13,8 @@ function registerUser(newUser)
 
     const newUserRef = push(ref(db, "users"));
     console.log(newUserRef);
+
+    newUser["id"] = newUserRef.key;
 
     //const dbRef = ref(db, "user/ " + newUser.NAME);
     set(newUserRef, newUser);
@@ -36,16 +39,19 @@ function updateUsers(info)
 {
     if(info)
     {
-        let text = "";
+        userList1.innerHTML = "";
         
         Object.keys(info).forEach((key, index) =>
         {
             console.log(key, index);
-            text += info[key].NAME + "<br>";
+            const card = new userCards(info[key]);
+            userList1.appendChild(card.render());
+
+            //text += info[key].NAME + "<br>";
         });
         console.log(text)
 
-        userList1.innerHTML = text;
+        //userList1.innerHTML = text;
     }
 
     else
