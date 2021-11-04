@@ -11,6 +11,11 @@ body
     height: 25px;
 }
 
+#registerButton:hover
+{
+    cursor:pointer;    
+}
+
 #textfieldDiv
 {
     justify-content: center;
@@ -43,10 +48,15 @@ body
     display: flex;
 }
 
-#plusButton
+.plusButton
 {
     width: 50px;
     margin: 4px;
     background-color: white;
     border-radius: 30px;
+}
+
+.plusButton:hover
+{
+    cursor:pointer;
 }

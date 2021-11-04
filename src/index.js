@@ -11,10 +11,8 @@ function registerUser(newUser)
 {
     const db = getDatabase();
 
-    const newUserRef = push(ref(db, "users"));
+    const newUserRef = (ref(db, "users/" + newUser.CODE));
     console.log(newUserRef);
-
-    newUser["id"] = newUserRef.key;
 
     //const dbRef = ref(db, "user/ " + newUser.NAME);
     set(newUserRef, newUser);
@@ -56,7 +54,7 @@ function updateUsers(info)
 
     else
     {
-        userList1.innerHTML = "n/a";
+        userList1.innerHTML = "N/A";
     }
 }
 
@@ -79,12 +77,14 @@ const saveUserData = (e, event) =>
     let name = studentName.value;
     let code = codeText.value;
     let course = courseText.value;
+    let participations = 0;
 
     let newUser =
     {
         NAME: name,
         CODE: code,
-        COURSE: course
+        COURSE: course,
+        PART: participations
     };
 
     registerUser(newUser);
