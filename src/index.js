@@ -43,6 +43,11 @@ function updateUsers(info)
         {
             console.log(key, index);
             const card = new userCards(info[key]);
+
+            let particips = card.PART
+        
+            console.log(card.PART);
+
             userList1.appendChild(card.render());
 
             //text += info[key].NAME + "<br>";
@@ -55,6 +60,8 @@ function updateUsers(info)
     else
     {
         userList1.innerHTML = "N/A";
+        userList2.innerHTML = "N/A";
+        userList3.innerHTML = "N/A";
     }
 }
 
@@ -65,6 +72,8 @@ const courseText = document.getElementById("course");
 const registerButton = document.getElementById("registerButton");
 
 const userList1 = document.getElementById("bonusC1");
+const userList2 = document.getElementById("bonusC2");
+const userList3 = document.getElementById("bonusC3");
 
 
 function test()

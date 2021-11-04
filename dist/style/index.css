@@ -60,3 +60,17 @@ body
 {
     cursor:pointer;
 }
+
+.deleteButton
+{
+    width: 50px;
+    margin: 4px;
+    background-color: red;
+    color: white;
+    border-radius: 30px;
+}
+
+.deleteButton
+{
+    cursor:pointer;
+}

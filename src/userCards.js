@@ -9,6 +9,7 @@ export class userCards
 
     render()
     {
+
         let card = document.createElement("div");
         card.className = "user-card";
 
@@ -50,11 +51,25 @@ export class userCards
             set(userPartRef, newPart);
         });
 
+        let deleteBtn = document.createElement("button");
+
+        deleteBtn.className = "deleteButton";
+        deleteBtn.innerHTML = "X";
+
+        deleteBtn.addEventListener("click", (e, ev) =>
+        {
+                        const db = getDatabase();
+                        const userRef = ref(db, 'users/' + this.user.CODE);
+                        console.log(userRef);
+                        set(userRef, null);
+        })
+
         card.appendChild(cardCourse);
         card.appendChild(cardName);
         card.appendChild(cardParticip);
         card.appendChild(cardCode);
         card.appendChild(plusBtn);
+        card.appendChild(deleteBtn);
 
         return card;
     }
