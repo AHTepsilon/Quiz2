@@ -73,4 +73,9 @@ export class userCards
 
         return card;
     }
+
+    drawOntoPage(info)
+    {
+        
+    }
 }

@@ -42,13 +42,28 @@ function updateUsers(info)
         Object.keys(info).forEach((key, index) =>
         {
             console.log(key, index);
-            const card = new userCards(info[key]);
+            const card = new userCards(info[key]);        
+            testBtn.addEventListener("click", (e, ev) =>
+            {
+                console.log(info[key].PART);
+            });
 
-            let particips = card.PART
-        
-            console.log(card.PART);
+            let userParticips = info[key].PART;
 
-            userList1.appendChild(card.render());
+            if(userParticips <= 5)
+            {
+                userList1.appendChild(card.render());
+            }
+
+            else if(userParticips > 5 && userParticips <= 10)
+            {
+                userList2.appendChild(card.render());
+            }
+
+            else if(userParticips > 10)
+            {
+                userList3.appendChild(card.render());
+            }
 
             //text += info[key].NAME + "<br>";
         });
@@ -75,6 +90,7 @@ const userList1 = document.getElementById("bonusC1");
 const userList2 = document.getElementById("bonusC2");
 const userList3 = document.getElementById("bonusC3");
 
+const testBtn = document.getElementById("testButton");
 
 function test()
 {
