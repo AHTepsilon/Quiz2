@@ -38,6 +38,8 @@ function updateUsers(info)
     if(info)
     {
         userList1.innerHTML = "";
+        userList2.innerHTML = "";
+        userList3.innerHTML = "";
         
         Object.keys(info).forEach((key, index) =>
         {
@@ -55,12 +57,12 @@ function updateUsers(info)
                 userList1.appendChild(card.render());
             }
 
-            else if(userParticips > 5 && userParticips <= 10)
+            if(userParticips > 5 && userParticips <= 10)
             {
                 userList2.appendChild(card.render());
             }
 
-            else if(userParticips > 10)
+            if(userParticips > 10)
             {
                 userList3.appendChild(card.render());
             }
